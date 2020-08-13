@@ -43,13 +43,17 @@ print("방법3: 제 이름은 %s입니다."%(name))   # % 포맷팅 사용
 print("방법1-1: 제 이름은 {0:^10}입니다.".format(name))    #글자 자리수와 정렬을 할 수 있다.
 print("방법1-2: 제 이름은 {0:<10}입니다.".format(name))
 print("방법1-3: 제 이름은 {0:>10}입니다.".format(name))
+print("방법1-4: 제 이름은 {0:!>10}입니다.".format(name))     # 공백채우기 가능
 print(f"방법2-1: 제 이름은 {name:^10}입니다.") # f 스트링 역시 정렬이 가능하다.
+print(f"방법2-2: 제 이름은 {name:10}입니다.")
+print("방법3-1: 제 이름은 %10s입니다."%(name))
+print("방법3-1: 제 이름은 %-10s입니다."%(name))
 
 #여러 변수 사용
 age = 25
 print("방법1: 제 이름은 {0}이고, 나이는 {1}살입니다.".format(name,age))
 print(f"방법2: 제 이름은 {name}이고, 나이는 {age}살입니다.")
-print("방법3: 제 이름은 %s이고, 나이는 %d살입니다."%(name, age))
+print("방법3: 제 이름은 %s이고, 나이는 %d살입니다."%(name, age))       #### % 포맷팅을 사용할 때 문자열에 %를 표현하고싶으면 %%으로 작성해야한다.
 
 # 탈출문자 (?)
 # \n, \t, \\, \', \"
@@ -70,3 +74,56 @@ path1 = "C:\\Users\\hjy9891\\PycharmProjects\\Practice\\02_String.py"
 path2 = "C:/Users/hjy9891/PycharmProjects/Practice/02_String.py"
 # 백슬래시를 두번씩 써 주거나 슬래시를 통해 경로를 입력해야한다.
 
+
+# 문자열의 길이
+print(s)
+print(len(s))
+
+# 글자 변환
+s = 'abcde'
+print(s)
+s = s.replace('c', 'z')
+print(s)
+
+# count
+c = s.count('a')
+print(c)
+s += "aaa"
+c = s.count('a')
+print(c)
+
+# find는 없는 값을 찾을때 -1도 반환
+idx_a = s.find("a")
+print(idx_a)
+
+# index는 없는 값 찾을 때 에러
+idx_b = s.index("b")
+print(idx_b)
+
+# 문자열 중간에 :을 삽입한다.
+s = ":".join(s)
+print(s)
+
+# 대문자 변환
+print(s.upper())
+
+# 소문자 변환
+print(s.lower())
+
+s = s.split(":")    # : 기준으로 문자열 나누기
+print(s)
+
+## 공백 지우기
+test = "\n저는 코딩을\t공부중입니다.    "
+print(test, end="")
+print("ddd")
+
+test = test.rstrip()
+print(test, end="")
+print("ddd")
+
+test = test.lstrip()
+print(test, end="")
+print("ddd")
+
+## strip은 양쪽 공백 지우기가 가능하다.
